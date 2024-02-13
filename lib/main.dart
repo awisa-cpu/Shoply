@@ -1,25 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shoply/views/app_screens/profile_page.dart';
+import 'app.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Shoply',
-      theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown.shade500),
-        primaryColor: Colors.brown.shade500,
-        useMaterial3: true,
-      ),
-      home: const ProfilePage(),
-    );
-  }
-}
