@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shoply/common/widgets/custom_app_bar_title.dart';
 import 'package:shoply/common/widgets/custom_back_navigator.dart';
 import 'package:shoply/common/widgets/custom_list_tile.dart';
 
@@ -20,7 +19,8 @@ class _PaymentMethodsPageState extends State<PaymentMethodsPage> {
         leading: BackNavigator(
           goBackTo: () {},
         ),
-        title: const CustomAppBarTitle(title: 'Payment Methods'),
+        title: Text('Payment Methods',
+            style: Theme.of(context).textTheme.titleLarge),
         centerTitle: true,
       ),
       body: Padding(

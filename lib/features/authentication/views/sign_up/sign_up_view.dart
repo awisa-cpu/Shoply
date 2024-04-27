@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoply/common/styles/custom_app_view_layout.dart';
 import 'package:shoply/utilities/constants/sizes.dart';
 
 import 'widgets/custom_sign_up_footer_section.dart';
@@ -11,26 +12,20 @@ class SignUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: CusSizes.defaultSpace,
-            vertical: CusSizes.defaultSpace * 2,
-          ),
-          child: Column(
-            children: [
-              CustomSignUpHeaderWithTitle(),
+      body: CustomAppViewLayout(
+        child: Column(
+          children: [
+            CustomSignUpHeaderWithTitle(),
 
-              SizedBox(height: CusSizes.spaceBtwSections),
+            SizedBox(height: CusSizes.spaceBtwSections),
 
-              //sign up  form
-              CustomSignUpForm(),
+            //sign up  form
+            CustomSignUpForm(),
 
-              SizedBox(height: CusSizes.spaceBtwItems),
+            SizedBox(height: CusSizes.spaceBtwItems),
 
-              CustomSignUpFooterSection(),
-            ],
-          ),
+            CustomSignUpFooterSection(),
+          ],
         ),
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shoply/common/widgets/custom_app_bar_title.dart';
 import 'package:shoply/common/widgets/custom_back_navigator.dart';
 
 class PrivacyPolicy extends StatelessWidget {
@@ -14,9 +13,8 @@ class PrivacyPolicy extends StatelessWidget {
         leading: BackNavigator(
           goBackTo: () {},
         ),
-        title: const CustomAppBarTitle(
-          title: 'Privacy Policy',
-        ),
+        title: Text('Privacy Policy',
+            style: Theme.of(context).textTheme.titleLarge),
         centerTitle: true,
       ),
 

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shoply/common/widgets/custom_app_bar_title.dart';
-import 'package:shoply/common/widgets/custom_back_navigator.dart';
 import 'package:shoply/features/authentication/views/sign_in/sign_in_view.dart';
 import 'package:shoply/utilities/constants/image_strings.dart';
 import 'package:shoply/utilities/constants/sizes.dart';
@@ -10,33 +8,20 @@ import 'package:shoply/utilities/constants/text_strings.dart';
 import '../../../../common/widgets/custom_button.dart';
 import '../../../../common/widgets/custom_list_tile.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+class ProfileView extends StatefulWidget {
+  const ProfileView({super.key});
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
+  State<ProfileView> createState() => _ProfileViewState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfileViewState extends State<ProfileView> {
   @override
   Widget build(BuildContext context) {
-    // final color = Theme.of(context).primaryColor;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        leading: BackNavigator(
-          goBackTo: () {},
-        ),
-        title: const CustomAppBarTitle(title: 'Profile'),
-        centerTitle: true,
-      ),
       body: Padding(
-        padding: const EdgeInsets.only(
-          left: 15.5,
-          right: 15.5,
-          top: 3.5,
-          bottom: 25,
-        ),
+        padding: const EdgeInsets.only(top: 35, left: 15, right: 15),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -44,6 +29,11 @@ class _ProfilePageState extends State<ProfilePage> {
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  Text('Profile',
+                      style: Theme.of(context).textTheme.titleLarge),
+
+                  const SizedBox(height: 20),
+
                   Stack(
                     alignment: Alignment.bottomRight,
                     children: [

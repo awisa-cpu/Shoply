@@ -19,19 +19,53 @@ class CustomSignUpForm extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(CustomStrings.name),
-          const SizedBox(height: CusSizes.spaceBtwItems / 2),
+          //first and last name field
+          Row(
+            children: [
+              //first name
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(CustomStrings.firstName),
+                    const SizedBox(height: CusSizes.spaceBtwItems / 2),
+                    TextFormField(
+                      decoration: const InputDecoration(hintText: 'John'),
+                    ),
+                  ],
+                ),
+              ),
 
-          //name field
+              const SizedBox(width: CusSizes.spaceBtwItems),
+              //lastname
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(CustomStrings.lastName),
+                    const SizedBox(height: CusSizes.spaceBtwItems / 2),
+                    TextFormField(
+                      decoration: const InputDecoration(hintText: 'Doe'),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: CusSizes.spaceBtwInputFields),
+
+          Text(CustomStrings.userName),
+          const SizedBox(height: CusSizes.spaceBtwItems / 2),
+          //username
           TextFormField(
-            decoration: const InputDecoration(hintText: 'John Doe'),
+            decoration: const InputDecoration(hintText: 'johnDoe'),
           ),
 
           const SizedBox(height: CusSizes.spaceBtwInputFields),
 
           Text(CustomStrings.email),
           const SizedBox(height: CusSizes.spaceBtwItems / 2),
-
           //email field
           TextFormField(
             decoration: const InputDecoration(hintText: 'example@gmail.com'),
@@ -39,10 +73,17 @@ class CustomSignUpForm extends StatelessWidget {
 
           const SizedBox(height: CusSizes.spaceBtwInputFields),
 
-          Text(CustomStrings.password),
-
+          Text(CustomStrings.phoneNumber),
           const SizedBox(height: CusSizes.spaceBtwItems / 2),
+          //email field
+          TextFormField(
+            decoration: const InputDecoration(),
+          ),
 
+          const SizedBox(height: CusSizes.spaceBtwInputFields),
+
+          Text(CustomStrings.password),
+          const SizedBox(height: CusSizes.spaceBtwItems / 2),
           //password field
           TextFormField(
             decoration: InputDecoration(
@@ -64,7 +105,7 @@ class CustomSignUpForm extends StatelessWidget {
           //sign up button
           CustomActionButton(
             text: CustomStrings.signUp,
-            onPressed: ()=>Get.to(()=>const VerifyEmailView()),
+            onPressed: () => Get.to(() => const VerifyEmailView()),
           ),
         ],
       ),

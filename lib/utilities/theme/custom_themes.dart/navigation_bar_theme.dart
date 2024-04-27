@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:shoply/utilities/constants/app_colors.dart';
 
 class CustomNavigationBarTheme {
   static NavigationBarThemeData lightNavigationBarTheme =
       NavigationBarThemeData(
-    backgroundColor: Colors.black.withOpacity(0.85),
+    backgroundColor: Colors.grey.shade400.withOpacity(0.6),
     height: 65,
-    indicatorColor: Colors.white,
+    indicatorColor: AppColors.primaryColor,
     elevation: 0.0,
+    labelTextStyle: const MaterialStatePropertyAll(
+      TextStyle(color: Colors.black, fontSize: 12),
+    ),
   );
 
   static NavigationBarThemeData darkNavigationBarTheme =

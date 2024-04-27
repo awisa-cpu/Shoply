@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoply/utilities/constants/app_colors.dart';
 
 class CustomTextFieldTheme {
   //light theme
@@ -13,11 +14,11 @@ class CustomTextFieldTheme {
           const TextStyle().copyWith(color: Colors.black.withOpacity(0.8)),
       border: const OutlineInputBorder().copyWith(
         borderRadius: BorderRadius.circular(30),
-        borderSide: const BorderSide(width: 1, color: Colors.grey),
+        borderSide: const BorderSide(width: 1, color: AppColors.primaryColor),
       ),
       enabledBorder: const OutlineInputBorder().copyWith(
         borderRadius: BorderRadius.circular(30),
-        borderSide: const BorderSide(width: 1, color: Colors.grey),
+        borderSide: const BorderSide(width: 1, color: AppColors.primaryColor),
       ),
       focusedBorder: const OutlineInputBorder().copyWith(
         borderRadius: BorderRadius.circular(30),

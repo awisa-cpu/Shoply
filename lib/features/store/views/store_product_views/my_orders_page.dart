@@ -1,6 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:shoply/common/widgets/custom_app_bar_title.dart';
 import 'package:shoply/common/widgets/custom_back_navigator.dart';
 
 import 'package:shoply/common/widgets/custom_toggle_button2.dart';
@@ -113,7 +112,7 @@ class _MyOrdersState extends State<MyOrders> {
         leading: BackNavigator(
           goBackTo: () {},
         ),
-        title: const CustomAppBarTitle(title: 'My Orders'),
+        title: Text('My Orders', style: Theme.of(context).textTheme.titleLarge),
         centerTitle: true,
       ),
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shoply/common/widgets/custom_app_bar_title.dart';
 import 'package:shoply/common/widgets/custom_back_navigator.dart';
 import 'package:shoply/common/widgets/custom_list_tile.dart';
 
@@ -14,7 +13,7 @@ class SettingsView extends StatelessWidget {
         leading: BackNavigator(
           goBackTo: () {},
         ),
-        title: const CustomAppBarTitle(title: 'Settings'),
+        title: Text('Settings', style: Theme.of(context).textTheme.titleLarge),
         centerTitle: true,
       ),
 

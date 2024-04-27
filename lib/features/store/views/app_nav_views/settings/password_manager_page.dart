@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shoply/common/widgets/custom_action_button.dart';
-import 'package:shoply/common/widgets/custom_app_bar_title.dart';
 import 'package:shoply/common/widgets/custom_back_navigator.dart';
 import 'package:shoply/common/widgets/custom_password_forget.dart';
 import 'package:shoply/common/widgets/custom_password_field.dart';
@@ -31,7 +30,8 @@ class _PasswordManagerPageState extends State<PasswordManagerPage> {
         leading: BackNavigator(
           goBackTo: () {},
         ),
-        title: const CustomAppBarTitle(title: 'Password Manager'),
+        title: Text('Password Manager',
+            style: Theme.of(context).textTheme.titleLarge),
         centerTitle: true,
       ),
       body: Padding(

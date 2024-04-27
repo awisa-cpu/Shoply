@@ -5,7 +5,6 @@ import 'package:shoply/common/widgets/custom_back_navigator.dart';
 import 'package:shoply/common/widgets/custom_button.dart';
 import 'package:shoply/features/store/views/store_product_views/my_orders_page.dart';
 
-import '../../../../common/widgets/custom_app_bar_title.dart';
 import '../../../../common/widgets/rating.dart';
 
 class OrderReviewPage extends StatefulWidget {
@@ -43,7 +42,7 @@ class _OrderReviewPageState extends State<OrderReviewPage> {
         leading: BackNavigator(
           goBackTo: () {},
         ),
-        title: const CustomAppBarTitle(title: 'Leave Review'),
+        title:  Text('Leave Review',style: Theme.of(context).textTheme.titleLarge),
         centerTitle: true,
       ),
 

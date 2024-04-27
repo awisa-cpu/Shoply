@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shoply/features/store/views/app_nav_views/wishlist/wishlist_view.dart';
+import 'package:shoply/features/store/views/store_product_views/home_view.dart';
+import 'package:shoply/features/store/views/store_product_views/shop_view.dart';
 import 'package:shoply/utilities/helper/helper_function.dart';
-import 'package:shoply/features/store/views/app_nav_views/settings/help_center_page.dart';
-import 'package:shoply/features/store/views/app_nav_views/message/notification_page.dart';
-import 'package:shoply/features/store/views/app_nav_views/settings/password_manager_page.dart';
+import 'package:shoply/features/store/views/app_nav_views/notification/notification_view.dart';
 import 'package:shoply/features/personalization/views/profile/profile_view.dart';
-import 'package:shoply/features/store/views/app_nav_views/settings/settings_view.dart';
 
 class AppNavigator extends StatelessWidget {
   const AppNavigator({super.key});
@@ -19,42 +19,45 @@ class AppNavigator extends StatelessWidget {
     return Obx(
       () => Scaffold(
         bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: NavigationBar(
-            selectedIndex: controller.selectedIndex.value,
-            onDestinationSelected: controller.onDestinationSelected,
-            destinations: [
-              NavigationDestination(
-                  icon: Icon(
-                    Iconsax.home5,
-                    color: isLight ? color : Colors.black,
-                  ),
-                  label: 'Home'),
-              NavigationDestination(
-                  icon: Icon(
-                    Iconsax.bag_2,
-                    color: isLight ? color : Colors.black,
-                  ),
-                  label: 'Shop'),
-              NavigationDestination(
-                  icon: Icon(
-                    Iconsax.heart,
-                    color: isLight ? color : Colors.black,
-                  ),
-                  label: 'Saved'),
-              NavigationDestination(
-                  icon: Icon(
-                    Iconsax.message,
-                    color: isLight ? color : Colors.black,
-                  ),
-                  label: 'Message'),
-              NavigationDestination(
-                  icon: Icon(
-                    Iconsax.profile_circle,
-                    color: isLight ? color : Colors.black,
-                  ),
-                  label: 'Profile'),
-            ],
+          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(27),
+            child: NavigationBar(
+              selectedIndex: controller.selectedIndex.value,
+              onDestinationSelected: controller.onDestinationSelected,
+              destinations: [
+                NavigationDestination(
+                    icon: Icon(
+                      Iconsax.home5,
+                      color: isLight ? color : Colors.black,
+                    ),
+                    label: 'Home'),
+                NavigationDestination(
+                    icon: Icon(
+                      Iconsax.bag_2,
+                      color: isLight ? color : Colors.black,
+                    ),
+                    label: 'Shop'),
+                NavigationDestination(
+                    icon: Icon(
+                      Iconsax.heart,
+                      color: isLight ? color : Colors.black,
+                    ),
+                    label: 'Saved'),
+                NavigationDestination(
+                    icon: Icon(
+                      Iconsax.message,
+                      color: isLight ? color : Colors.black,
+                    ),
+                    label: 'Message'),
+                NavigationDestination(
+                    icon: Icon(
+                      Iconsax.profile_circle,
+                      color: isLight ? color : Colors.black,
+                    ),
+                    label: 'Profile'),
+              ],
+            ),
           ),
         ),
         body: controller.currentWidget(controller.selectedIndex.value),
@@ -73,19 +76,19 @@ class NavigationController extends GetxController {
   Widget? currentWidget(int index) {
     switch (index) {
       case 0:
-        return const ProfilePage();
+        return const HomeView();
 
       case 1:
-        return const SettingsView();
+        return const ShopView();
 
       case 2:
-        return const HelpCenterPage();
+        return const WishListView();
 
       case 3:
-        return const NotificationsPage();
+        return const NotificationsView();
 
       case 4:
-        return const PasswordManagerPage();
+        return const ProfileView();
 
       default:
         return Container();

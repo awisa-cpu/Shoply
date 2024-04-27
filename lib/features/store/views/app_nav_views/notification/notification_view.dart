@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shoply/common/widgets/custom_app_bar_title.dart';
-import 'package:shoply/common/widgets/custom_back_navigator.dart';
 
 import '../../../../../common/widgets/custom_notification.dart';
 
-class NotificationsPage extends StatelessWidget {
-  const NotificationsPage({super.key});
+class NotificationsView extends StatelessWidget {
+  const NotificationsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +14,9 @@ class NotificationsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: BackNavigator(
-          goBackTo: () {},
-        ),
-        title: const CustomAppBarTitle(title: 'Notification'),
+        automaticallyImplyLeading: false,
+        title:
+            Text('Notification', style: Theme.of(context).textTheme.titleLarge),
         centerTitle: true,
         actions: [
           Container(

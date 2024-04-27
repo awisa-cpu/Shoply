@@ -13,6 +13,10 @@ class CustomStrings {
   static String signUp = "Sign up";
   static String name = "Name";
   static String email = "Email";
+  static String firstName = "First Name";
+  static String lastName = "Last Name";
+  static String userName = "User Name";
+  static String phoneNumber = "Phone Number";
   static String password = "Password";
   static String confirmPassword = "Confirm Password";
   static String createNewPassword = "Create New Password";
