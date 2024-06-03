@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shoply/utilities/typedefs/custom_typedefs.dart';
 
-class CustomListTile extends StatefulWidget {
+class CustomListTile extends StatelessWidget {
   final ListTileAction action;
   final IconData icon;
   final String title;
@@ -17,11 +17,6 @@ class CustomListTile extends StatefulWidget {
   });
 
   @override
-  State<CustomListTile> createState() => _CustomListTileState();
-}
-
-class _CustomListTileState extends State<CustomListTile> {
-  @override
   Widget build(BuildContext context) {
     final color = Theme.of(context).primaryColor;
     return Column(
@@ -29,27 +24,28 @@ class _CustomListTileState extends State<CustomListTile> {
       children: [
         ListTile(
           splashColor: Colors.transparent,
-          onTap: widget.forPay ? null : widget.action,
-          leading: Icon(widget.icon, color: color, size: 30),
-          title: Text(widget.title),
-          trailing: widget.forPay
+          onTap: forPay ? null : action,
+          leading: Icon(icon, color: color, size: 30),
+          title: Text(title),
+          trailing: forPay
               ? TextButton(
-                  style: const ButtonStyle(
+                  style: TextButton.styleFrom(
                     enableFeedback: false,
-                    overlayColor: MaterialStatePropertyAll(Colors.transparent),
+                    overlayColor: Colors.transparent,
                   ),
                   onPressed: () {},
                   child: Text(
                     'Link',
                     style: TextStyle(color: color, fontSize: 20),
-                  ))
+                  ),
+                )
               : Icon(Icons.chevron_right, color: color, size: 30),
           enableFeedback: false,
           horizontalTitleGap: 10,
         ),
 
         //
-        widget.shoudAddDiv ? const Divider() : const SizedBox.shrink()
+        shoudAddDiv ? const Divider() : const SizedBox.shrink()
       ],
     );
   }

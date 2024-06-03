@@ -8,7 +8,7 @@ class CustomNavigationBarTheme {
     height: 65,
     indicatorColor: AppColors.primaryColor,
     elevation: 0.0,
-    labelTextStyle: const MaterialStatePropertyAll(
+    labelTextStyle: const WidgetStatePropertyAll(
       TextStyle(color: Colors.black, fontSize: 12),
     ),
   );
